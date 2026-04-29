@@ -1,0 +1,250 @@
+:root {
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #7dd3fc;
+  --muted: #94a3b8;
+  --text: #e6eef6;
+  --good: #34d399;
+  --warn: #f59e0b;
+  --bad: #fb7185;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071026 0%, #071226 100%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 12px 0;
+  font-size: 28px;
+  color: var(--accent);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.source-form {
+  margin-top: 14px;
+}
+
+input[type="url"] {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+  border-radius: 10px;
+}
+
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #022;
+  font-weight: 600;
+}
+
+button[disabled] { opacity: 0.7; cursor: not-allowed; }
+
+.error {
+  margin-top: 12px;
+  color: #ffb4b4;
+  background: rgba(255, 80, 80, 0.08);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.result-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.matrix-card {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.matrix-header {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.matrix-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.matrix-header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.matrix-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.matrix-link:hover {
+  text-decoration: underline;
+}
+
+.matrix-image {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #fff;
+  padding: 8px;
+}
+
+/* Confidence bar layout */
+.confidence-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.confidence-bar {
+  flex: 1 1 auto;
+  height: 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+.confidence-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 450ms cubic-bezier(.2,.9,.3,1);
+  background: linear-gradient(90deg, var(--good) 0%, var(--accent) 100%);
+}
+
+/* meta to the right of bar: shows label and percent */
+.confidence-meta {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.meta-item { min-width: 40px; }
+.percent-text { font-weight: 700; color: var(--text); }
+
+/* Probability section */
+.probs {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.split-grid {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.panel {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.panel h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.term-list,
+.risky-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.term-list li,
+.risky-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.term-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.term-list li small {
+  color: var(--muted);
+}
+
+.risk-head {
+  margin-bottom: 4px;
+  color: #fca5a5;
+}
+
+footer { margin-top: 18px; color: var(--muted); }
+pre { white-space: pre-wrap; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; overflow-x: auto; }
+
+@media (max-width: 640px) {
+  body {
+    padding: 16px;
+  }
+
+  .matrix-image {
+    padding: 4px;
+  }
+}
