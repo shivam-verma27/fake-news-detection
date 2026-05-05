@@ -2,9 +2,9 @@
     "host":  "127.0.0.1",
     "api_port":  8000,
     "frontend_port":  5173,
-    "backend_pid":  15548,
+    "backend_pid":  4288,
     "frontend_pid":  null,
-    "backend_launcher_pid":  26944,
-    "frontend_launcher_pid":  11312,
-    "started_at":  "2026-04-23T13:49:32.0682076+05:30"
+    "backend_launcher_pid":  31144,
+    "frontend_launcher_pid":  27236,
+    "started_at":  "2026-05-06T00:01:52.6780456+05:30"
 }

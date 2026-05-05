@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-const CONFUSION_MATRIX_IMAGE_URL = `${API_URL}/confusion_matrix_image`;
+const API_URL = import.meta.env.VITE_API_URL || "/api";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -262,28 +261,6 @@ export default function App() {
           </details>
         </div>
       )}
-
-      <section className="matrix-card">
-        <div className="matrix-header">
-          <div>
-            <h2>Model confusion matrix</h2>
-            <p>Validation-set summary saved from the latest training run.</p>
-          </div>
-          <a
-            className="matrix-link"
-            href={CONFUSION_MATRIX_IMAGE_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open image
-          </a>
-        </div>
-        <img
-          className="matrix-image"
-          src={CONFUSION_MATRIX_IMAGE_URL}
-          alt="Confusion matrix for the TruthLens model"
-        />
-      </section>
 
       <footer>
         <small>
